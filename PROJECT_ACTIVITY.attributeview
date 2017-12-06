@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="PROJECT_ACTIVITY" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="PROJECTS"/>
+  <metadata changedAt="2017-12-01 13:46:48.979" createdAt="2017-12-01 13:46:48.979"/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <attributes>
+    <attribute id="PROJECT_NAME" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PROJECT_NAME"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="PROJECT_NAME"/>
+    </attribute>
+    <attribute id="ACCOUNT" key="true" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ACCOUNT"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="ACCOUNT"/>
+    </attribute>
+    <attribute id="DESCRIPTION" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="DESCRIPTION"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="DESCRIPTION"/>
+    </attribute>
+    <attribute id="START_DATE" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="START_DATE"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="START_DATE"/>
+    </attribute>
+    <attribute id="END_DATE" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="END_DATE"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="END_DATE"/>
+    </attribute>
+    <attribute id="PRIMARY_CONTACT" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PRIMARY_CONTACT"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="PRIMARY_CONTACT"/>
+    </attribute>
+    <attribute id="RECOVERY" order="7" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="RECOVERY"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="RECOVERY"/>
+    </attribute>
+    <attribute id="OTHER_CONTACT" order="8" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="OTHER_CONTACT"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="PROJECT" columnName="OTHER_CONTACT"/>
+    </attribute>
+    <attribute id="ACTIVITY_NAME" order="9" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ACTIVITY_NAME"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="ACTIVITY" columnName="ACTIVITY_NAME"/>
+    </attribute>
+    <attribute id="USAGE_1" order="10" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="USAGE_1"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="ACTIVITY" columnName="USAGE"/>
+    </attribute>
+    <attribute id="DATE" order="11" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="DATE"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="ACTIVITY" columnName="DATE"/>
+    </attribute>
+    <attribute id="QUARTER" order="12" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="QUARTER"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="ACTIVITY" columnName="QUARTER"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="COIL_INNOVATION" columnObjectName="PROJECT"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="COIL_INNOVATION" columnObjectName="ACTIVITY"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="COIL_INNOVATION" columnObjectName="PROJECT"/>
+        <rightTable schemaName="COIL_INNOVATION" columnObjectName="ACTIVITY"/>
+        <leftColumns>
+          <columnName>PROJECT_NAME</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PROJECT_NAME</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="PROJECT" modelObjectNameSpace="COIL_INNOVATION" modelObjectType="catalog">
+          <upperLeftCorner x="43" y="177"/>
+        </shape>
+        <shape modelObjectName="ACTIVITY" modelObjectNameSpace="COIL_INNOVATION" modelObjectType="catalog">
+          <upperLeftCorner x="320" y="25"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize height="0" width="0"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

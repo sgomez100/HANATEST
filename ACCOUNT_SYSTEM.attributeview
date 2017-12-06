@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="ACCOUNT_SYSTEM" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="ACCOUNT_SYSTEM"/>
+  <metadata changedAt="2017-12-01 14:00:03.939"/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <attributes>
+    <attribute id="ACCOUNT_NAME" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ACCOUNT_NAME"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="ACCOUNT" columnName="ACCOUNT_NAME"/>
+    </attribute>
+    <attribute id="SPONSOR" order="2" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="SPONSOR"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="ACCOUNT" columnName="SPONSOR"/>
+    </attribute>
+    <attribute id="SYSTEM_ID" key="true" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="SYSTEM_ID"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="SYSTEM_ID"/>
+    </attribute>
+    <attribute id="ACCOUNT" hidden="true" key="true" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="ACCOUNT"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="ACCOUNT"/>
+    </attribute>
+    <attribute id="COST_TYPE" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="COST_TYPE"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="COST_TYPE"/>
+    </attribute>
+    <attribute id="COST_MODEL" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="COST_MODEL"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="COST_MODEL"/>
+    </attribute>
+    <attribute id="UNIT" order="7" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="UNIT"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="UNIT"/>
+    </attribute>
+    <attribute id="CURRENCY" order="8" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CURRENCY"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="CURRENCY"/>
+    </attribute>
+    <attribute id="COST" order="9" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="COST"/>
+      <keyMapping schemaName="COIL_INNOVATION" columnObjectName="COSTS" columnName="COST"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="COIL_INNOVATION" columnObjectName="ACCOUNT"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="COIL_INNOVATION" columnObjectName="COSTS"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="COIL_INNOVATION" columnObjectName="ACCOUNT"/>
+        <rightTable schemaName="COIL_INNOVATION" columnObjectName="COSTS"/>
+        <leftColumns>
+          <columnName>ACCOUNT_NAME</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>ACCOUNT</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="ACCOUNT" modelObjectNameSpace="COIL_INNOVATION" modelObjectType="catalog">
+          <upperLeftCorner x="3" y="32"/>
+        </shape>
+        <shape modelObjectName="COSTS" modelObjectNameSpace="COIL_INNOVATION" modelObjectType="catalog">
+          <upperLeftCorner x="342" y="194"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize height="0" width="0"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>
